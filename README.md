@@ -11,6 +11,6 @@ allprojects {
 In App Level gradle
 
 dependencies {
-	        implementation 'com.github.AuxanoWeb:APlusChat:Tag'
+	        implementation 'com.github.AuxanoWeb:APlusChat:v1.0.0'
 	}
 
