@@ -1,8 +1,8 @@
 # APlusChat
 In Project Level gradle
 
-allprojects{
-  repositories{
+allprojects{\n\n
+  repositories{\n\n
     ...maven{
       url'https://jitpack.io'
     }
