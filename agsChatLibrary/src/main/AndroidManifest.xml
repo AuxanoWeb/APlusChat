@@ -15,7 +15,6 @@
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AuxanoChatSDK"
         android:usesCleartextTraffic="true">
         <activity
             android:name=".Activity.TempActivity"
