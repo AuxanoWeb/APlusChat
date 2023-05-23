@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingDefaultResource">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:orientation="horizontal"
+            android:elevation="@dimen/_4sdp"
+            android:background="@color/colorBackgroundToolBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aivBack"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:tint="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/aivCreateGroup"
+                style="@style/textViewHeadingTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/str_create_group"
+                android:textSize="@dimen/_16ssp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                app:layout_constraintStart_toEndOf="@+id/aivBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/clToolBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/nextBtnCreateGroup">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/searchCreateGroupEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:background="@drawable/bg_search_solid_rectangle"
+                    android:elevation="@dimen/_4sdp"
+                    android:gravity="center_vertical"
+                    android:hint="@string/str_search_chat"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorTextLabel"
+                    android:textSize="@dimen/_14ssp" />
+                <ImageView
+                    android:id="@+id/searchbtnCreateGroupUserListScreen"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_alignParentRight="true"
+                    android:elevation="@dimen/_4sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:src="@drawable/ic_baseline_search_24" />
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/colorTextLabel"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvUserListCreateGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/item_create_group_layout" />
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmerLayoutCreateGroupList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:visibility="gone"
+                    android:animationCache="true"
+                    app:shimmer_repeat_mode="restart"
+                    app:shimmer_shape="radial">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <include layout="@layout/shimmer_layout" />
+                        <include layout="@layout/shimmer_layout" />
+                        <include layout="@layout/shimmer_layout" />
+                        <include layout="@layout/shimmer_layout" />
+                        <include layout="@layout/shimmer_layout" />
+                        <include layout="@layout/shimmer_layout" />
+                        <include layout="@layout/shimmer_layout" />
+                        <include layout="@layout/shimmer_layout" />
+                        <include layout="@layout/shimmer_layout" />
+                        <include layout="@layout/shimmer_layout" />
+                        <include layout="@layout/shimmer_layout" />
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextBtnCreateGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14ssp"
+            android:text="@string/str_next"
+            android:textColor="@color/white"
+            android:fontFamily="@font/opensans_bold"
+            android:enabled="false"
+            android:background="@drawable/custom_button_disable"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

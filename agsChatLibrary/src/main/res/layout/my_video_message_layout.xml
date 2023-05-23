@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/dateVideoMessagelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/centerTimeVideoMessagetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/center_message_bubble"
+            android:padding="@dimen/_5sdp"
+            android:text="December 7,2022"
+            android:textColor="@color/colorTextLabel"
+            android:textSize="@dimen/_14sdp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/myVideoMainLayout"
+        android:layout_below="@+id/dateVideoMessagelayout"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:id="@+id/dateMyVideoMessagelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/my_message_bubble_red"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="@dimen/_180sdp"
+                android:padding="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/prevVideoMyIV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_5sdp"
+                    android:scaleType="centerCrop" />
+
+                <ProgressBar
+                    android:id="@+id/prevVideoPbarMyIV"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_centerInParent="true"
+                    android:theme="@style/AppTheme.WhiteAccent"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/playBtnMyVideo"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/play_btn"
+                    app:tint="@color/colorDarkGrey" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/txtVideoMyMessageTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="12:00 PM"
+                style="@style/textWhiteColor"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">AuxanoChatSDK</string>
+
+    <!--validation_messages-->
+    <string name="validate_type_mobile">mobile</string>
+    <string name="validate_type_url">url</string>
+    <string name="validate_type_email">email</string>
+    <string name="validate_type_empty">empty</string>
+    <string name="validate_type_username">username</string>
+    <string name="validate_type_password">password</string>
+    <string name="validation_valid_email">Please enter valid Email Address</string>
+    <string name="validation_valid_mobile">Please enter valid Phone Number</string>
+    <string name="validation_verify_code">Verification OTP must be of 4 digits</string>
+    <string name="validation_password_conformation">Password and Confirm New Password doesn\'t match</string>
+    <string name="validation_password_length">Please enter password between 8 to 15 characters</string>
+
+    <string name="str_profile">Profile</string>
+    <string name="str_profile_info">This is not your username or pin. This name will be visible to your chat contacts.</string>
+    <string name="str_add_member">Add Member</string>
+    <string name="str_add">Add</string>
+    <string name="str_create_group">Create Group</string>
+    <string name="str_contact_list">Contact List</string>
+    <string name="str_group_name">Enter group name</string>
+    <string name="str_enter_name">Enter your name</string>
+    <string name="str_search_chat">Search Chat</string>
+    <string name="str_type_message">Type a message...</string>
+    <string name="str_hint_url">Please enter valid link</string>
+    <string name="str_submit">Submit</string>
+    <string name="str_next">Next</string>
+    <string name="str_save">Save</string>
+    <string name="str_unknown_person">UnknownPerson</string>
+    <string name="contact_info">Contact Info</string>
+    <string name="delete_chat">Delete Chat</string>
+    <string name="exit_group">Exit Group</string>
+    <string name="clear_chat">Clear Chat</string>
+    <string name="delete_group">Delete Group</string>
+    <string name="group_info">Group Info</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_network_error">NetworkErrorActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="just_now">Now</string>
+    <string name="a_min_ago">1 minute ago</string>
+    <string name="mins_ago">" minutes ago"</string>
+    <string name="a_hour_ago">1 hour ago</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="days_ago">" days ago"</string>
+    <string name="week_ago">" week ago"</string>
+    <string name="weeks_ago">" weeks ago"</string>
+    <string name="str_forward_message">Forward Message</string>
+    <string name="str_send">Send</string>
+    <string name="str_please_wait">Please wait...</string>
+</resources>

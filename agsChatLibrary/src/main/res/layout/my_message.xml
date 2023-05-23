@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <RelativeLayout
+        android:id="@+id/dateMessagelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/centerTimeMessagetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/center_message_bubble"
+            android:padding="@dimen/_5sdp"
+            android:text="December 7,2022"
+            android:textColor="@color/colorTextLabel"
+            android:textSize="@dimen/_14sdp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/my_message_bubble_red"
+        android:orientation="vertical"
+        android:id="@+id/myMessageMainLayout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateMessagelayout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/reply_layout_my_message"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_above="@+id/sendBottomMessageLayout"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/replyBackground"
+            android:paddingStart="4dp"
+            android:visibility="visible">
+
+            <View
+                android:id="@+id/image_lineMyMessage"
+                android:layout_width="2dp"
+                android:layout_height="100dp"
+                android:background="#732D77"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/titleQuoteTvMyMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                style="@style/textViewNormalBlack"
+                android:text="Parth Bhatt"
+                app:layout_constraintStart_toStartOf="@+id/image_lineMyMessage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textQuotedMessageMyMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                style="@style/textViewNormalBlack"
+                android:maxLines="2"
+                android:text="helloshaishcnjxncjknzxjkncnkjzxn"
+                android:textColor="#1A1616"
+                android:textSize="16sp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/image_lineMyMessage"
+                app:layout_constraintTop_toBottomOf="@+id/titleQuoteTvMyMessage" />
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="@+id/image_lineMyMessage"
+                app:layout_constraintTop_toTopOf="@+id/titleQuoteTvMyMessage">
+
+                <ImageView
+                    android:id="@+id/imageQuotedMyMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/imageQuotedVideoMyMessage"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/play_btn"
+                    app:tint="@color/colorDarkGrey"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/txtMyMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            style="@style/textWhiteColor"
+            android:maxWidth="220dp"
+            android:minWidth="@dimen/_110sdp"
+            android:padding="8dp"
+            android:text="Hi, my message"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txtMyMessageTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:text="12:00 PM"
+            style="@style/textWhiteColor"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,117 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled = true
+    }
+    viewBinding {
+        enabled = true
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.9.1'
+    //Support All Resolution Screens Size
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    //Circle Image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //Socket
+    implementation('io.socket:socket.io-client:2.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+    // Lifecycle Components
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1' // provides lifecycleScope
+    //navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.2"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.2"
+    //Room Database
+    implementation "androidx.room:room-runtime:2.2.5"
+    implementation "androidx.room:room-ktx:2.2.5"
+    kapt "androidx.room:room-compiler:2.2.5"
+    //Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2"
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:4.5.0"
+    implementation 'com.google.code.gson:gson:2.8.6'
+    //dexter
+    implementation 'com.karumi:dexter:6.2.1'
+    //lottie
+    implementation 'com.airbnb.android:lottie:3.4.1'
+    //Dimension
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    //Layout Inflation and Setting Up ToolBar without override layout binding methods for Activity/Fragment
+    implementation 'androidx.activity:activity-ktx:1.1.0'
+    implementation 'androidx.fragment:fragment-ktx:1.3.6'
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    // dependency for exoplayer
+
+    implementation 'com.google.android.exoplayer:exoplayer:r2.4.0'
+    implementation 'com.google.android.exoplayer:exoplayer-core:r2.4.0'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:r2.4.0'
+    implementation 'com.google.android.exoplayer:exoplayer-hls:r2.4.0'
+    implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:r2.4.0'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:r2.4.0'
+
+    // File to ByteArray
+    implementation 'commons-io:commons-io:2.5'
+
+    //Shimmer Layout
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //File picker
+    implementation 'com.github.Mindinventory:Lassi:1.0.1'
+
+}

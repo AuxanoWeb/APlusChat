@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingDefaultResource">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@color/colorBackgroundToolBar"
+            android:elevation="@dimen/_4sdp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aivBackForward"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                android:tint="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvForwardMessageHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:text="@string/str_forward_message"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/aivBackForward"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/sendBtnForwardMessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clToolBar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/searchForwardMessageEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:background="@drawable/bg_search_solid_rectangle"
+                    android:elevation="@dimen/_4sdp"
+                    android:gravity="center_vertical"
+                    android:hint="@string/str_search_chat"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorTextLabel"
+                    android:textSize="@dimen/_14ssp" />
+
+                <ImageView
+                    android:id="@+id/searchbtnForwardMessageScreen"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:elevation="@dimen/_4sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_baseline_search_24" />
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/colorTextLabel" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvForwardMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/item_create_group_layout" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmerLayoutForwardMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:animationCache="true"
+                    android:visibility="gone"
+                    app:shimmer_repeat_mode="restart"
+                    app:shimmer_shape="radial">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sendBtnForwardMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@drawable/custom_button_disable"
+            android:enabled="false"
+            android:fontFamily="@font/opensans_bold"
+            android:text="@string/str_send"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

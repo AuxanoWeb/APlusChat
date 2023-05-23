@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/selectContactMainLayout"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:paddingHorizontal="@dimen/_10sdp">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civUserPicture"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/ic_placeholder_profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/civUserPicture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/civUserPicture"
+            app:layout_constraintTop_toTopOf="@+id/civUserPicture">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvContactLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Parth Bhatt"
+                    android:textColor="@color/colorDarkGrey"
+                    android:textSize="@dimen/_14ssp" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@color/colorItemDevider"
+            app:layout_constraintStart_toEndOf="@+id/civUserPicture"
+            app:layout_constraintTop_toBottomOf="@+id/civUserPicture"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_60sdp"
+    android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/groupUserListProfile"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_55sdp"
+        android:padding="@dimen/_5sdp" />
+
+    <TextView
+        android:id="@+id/tvGroupMemberName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/tvRemoveLable"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_toRightOf="@id/groupUserListProfile"
+        android:text="Parth Bhatt"
+        android:textColor="@color/colorDarkGrey"
+        android:textSize="@dimen/_18sdp" />
+
+    <TextView
+        android:id="@+id/tvAdminLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/admin_tag_bg"
+        android:paddingLeft="@dimen/_8sdp"
+        android:paddingTop="@dimen/_2sdp"
+        android:visibility="gone"
+        android:paddingRight="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_2sdp"
+        android:text="Admin"
+        android:textColor="@color/colorTextUrl"
+        android:textSize="@dimen/_12sdp" />
+    <TextView
+        android:id="@+id/tvRemoveLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/remove_tag_bg"
+        android:paddingLeft="@dimen/_8sdp"
+        android:paddingTop="@dimen/_2sdp"
+        android:visibility="gone"
+        android:paddingRight="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_2sdp"
+        android:text="Remove"
+        android:textColor="@color/colorRed"
+        android:textSize="@dimen/_12sdp" />
+</RelativeLayout>

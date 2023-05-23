@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/_5sdp"
+    android:layout_height="300dp"
+    app:cardCornerRadius="@dimen/_5sdp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="WebViewLayout">
+
+        <WebView
+            android:id="@+id/audioWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/closeimgshowdialogueaudio"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_close_btn_blue"
+                app:tint="@color/white" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

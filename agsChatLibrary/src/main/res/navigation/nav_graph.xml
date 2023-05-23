@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/UserListFragment">
+
+
+    <fragment
+        android:id="@+id/UserListFragment"
+        android:name="com.example.auxanochatsdk.ui.UserListFragment"
+        android:label="UserListFragment">
+
+        <action
+            android:id="@+id/navigateToCreateGroupFragment"
+            app:destination="@id/createGroupFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/navigateToCreateGroupUserListFragment"
+            app:destination="@id/createGroupUserListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/navigateToContactListFragment"
+            app:destination="@id/contactListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/navigateToProfileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/navigateToChatListFragment"
+            app:destination="@id/chatListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createGroupFragment"
+        android:name="com.example.auxanochatsdk.ui.CreateGroupFragment"
+        android:label="CreateGroupFragment">
+
+        <action
+            android:id="@+id/navigateToUserListFragment"
+            app:destination="@id/UserListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right"
+            app:popUpTo="@+id/UserListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_createGroupFragment_to_createGroupUserListFragment2"
+            app:destination="@id/createGroupUserListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right"
+            app:popUpTo="@+id/createGroupUserListFragment"
+            app:popUpToInclusive="true" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/createGroupUserListFragment"
+        android:name="com.example.auxanochatsdk.ui.CreateGroupUserListFragment"
+        android:label="CreateGroupUserListFragment">
+        <action
+            android:id="@+id/navigateToCreateGroupFragment"
+            app:destination="@id/createGroupFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_createGroupUserListFragment_to_UserListFragment"
+            app:destination="@id/UserListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right"
+            app:popUpTo="@+id/UserListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_createGroupUserListFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right"
+            app:popUpTo="@+id/userDetailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.auxanochatsdk.ui.ProfileFragment"
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/navigateToUserListFragment"
+            app:destination="@id/UserListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right"
+            app:popUpTo="@+id/UserListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatListFragment"
+        android:name="com.example.auxanochatsdk.ui.ChatListFragment"
+        android:label="ChatListFragment">
+        <action
+            android:id="@+id/navigateToUserListFragment"
+            app:destination="@id/UserListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right"
+            app:popUpTo="@+id/UserListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_chatListFragment_to_videoPlayFragment"
+            app:destination="@id/videoPlayFragment" />
+        <action
+            android:id="@+id/action_chatListFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_chatListFragment_to_forwardFragment"
+            app:destination="@id/forwardFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/forwardFragment"
+        android:name="com.example.auxanochatsdk.ui.ForwardFragment"
+        android:label="ForwardFragment">
+        <action
+            android:id="@+id/navigateToChatListFragment"
+            app:destination="@id/chatListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/contactListFragment"
+        android:name="com.example.auxanochatsdk.ui.ContactListFragment"
+        android:label="ContactListFragment">
+        <action
+            android:id="@+id/navigateToUserListFragment"
+            app:destination="@id/UserListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right"
+            app:popUpTo="@+id/UserListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/navigateToChatListFragmentFromContactList"
+            app:destination="@id/chatListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoPlayFragment"
+        android:name="com.example.auxanochatsdk.ui.VideoPlayFragment"
+        android:label="fragment_video_play"
+        tools:layout="@layout/fragment_video_play">
+        <action
+            android:id="@+id/navigateToVideoPlayFragment"
+            app:destination="@id/videoPlayFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="com.example.auxanochatsdk.ui.UserDetailFragment"
+        android:label="fragment_user_detail"
+        tools:layout="@layout/fragment_user_detail">
+        <action
+            android:id="@+id/action_userDetailFragment_to_chatListFragment"
+            app:destination="@id/UserListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right"
+            app:popUpTo="@+id/UserListFragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_userDetailFragment_to_createGroupUserListFragment"
+            app:destination="@id/createGroupUserListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right"
+            app:popUpTo="@+id/createGroupUserListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_userDetailFragment_to_UserListFragment"
+            app:destination="@id/UserListFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right"
+            app:popUpTo="@+id/UserListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

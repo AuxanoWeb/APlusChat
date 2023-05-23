@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clToolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:background="@color/colorBackgroundToolBar"
+                    android:elevation="@dimen/_4sdp"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/aivBackCreateGroup"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_baseline_arrow_back_24"
+                        android:tint="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/aivCreateGroup"
+                        android:layout_width="0dp"
+                        style="@style/textViewHeadingTitle"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:text="@string/str_create_group"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/aivBackCreateGroup"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                    android:id="@+id/frameLayout3"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clToolBar">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/groupIV"
+                        android:src="@drawable/group_place_holder" />
+
+                    <FrameLayout
+                        android:id="@+id/selectImageLayoutCreateGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:alpha="0.3"
+                        android:background="@drawable/ic_group_bg"
+                        android:backgroundTint="@color/black">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_white_camera" />
+                    </FrameLayout>
+
+                </FrameLayout>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/editTextUserNameCreateGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:background="@drawable/bg_search_solid_rectangle"
+                    android:elevation="@dimen/_4sdp"
+                    android:gravity="center_vertical"
+                    android:hint="@string/str_group_name"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorTextLabel"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frameLayout3" />
+
+                <!--<TextView
+                    android:id="@+id/textViewInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_profile_info"
+                    android:textColor="@color/colorBackroundDisable"
+                    android:textSize="@dimen/_12ssp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextUserName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>-->
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonCrateGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:background="@drawable/custom_button_disable"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@string/str_create_group"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

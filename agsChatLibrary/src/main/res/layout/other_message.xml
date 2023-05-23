@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:paddingTop="8dp">
+
+    <RelativeLayout
+        android:id="@+id/dateOtherMessagelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/centerTimeOtherMessagetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/center_message_bubble"
+            android:padding="@dimen/_5sdp"
+            android:text="December 7,2022"
+            android:textColor="@color/colorTextLabel"
+            android:textSize="@dimen/_14sdp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/other_message_bubble"
+        android:maxWidth="@dimen/_150sdp"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateOtherMessagelayout">
+
+        <TextView
+            android:id="@+id/pervUserNameOtherMessage"
+            style="@style/textBlueColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:fontFamily="@font/opensans_semibold"
+            android:includeFontPadding="false"
+            android:maxWidth="220dp"
+            android:text="Parth bhatt"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/reply_layout_other_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pervUserNameOtherMessage"
+            android:layout_margin="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="110dp"
+            android:background="@color/replyBackground"
+            android:paddingStart="4dp"
+            android:visibility="gone">
+
+            <View
+                android:id="@+id/image_lineOtherMessage"
+                android:layout_width="2dp"
+                android:layout_height="100dp"
+                android:background="#732D77"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/titleQuoteTvOtherMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Parth Bhatt"
+                app:layout_constraintStart_toStartOf="@+id/image_lineOtherMessage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textQuotedMessageOtherMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginStart="8dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="hello"
+                android:textColor="#1A1616"
+                android:textSize="14sp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/image_lineOtherMessage"
+                app:layout_constraintTop_toBottomOf="@+id/titleQuoteTvOtherMessage" />
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="@+id/image_lineOtherMessage"
+                app:layout_constraintTop_toTopOf="@+id/titleQuoteTvOtherMessage">
+
+                <ImageView
+                    android:id="@+id/imageQuotedOtherMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:visibility="invisible" />
+                <ImageView
+                    android:id="@+id/imageQuotedVideoOtherMessage"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/play_btn"
+                    app:tint="@color/colorDarkGrey"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/txtOtherMessage"
+            android:layout_width="wrap_content"
+            style="@style/textViewNormalBlack"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reply_layout_other_message"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:elevation="5dp"
+            android:maxWidth="220dp"
+            android:minWidth="@dimen/_100sdp"
+            android:padding="8dp"
+            android:text="Hello"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtOtherMessageTime"
+            android:layout_width="wrap_content"
+            style="@style/textViewNormal"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtOtherMessage"
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_toRightOf="@+id/txtOtherMessage"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:maxLines="1"
+            android:text="12:00 PM"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/txtOtherMessage"
+            app:layout_constraintTop_toBottomOf="@+id/txtOtherMessage" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

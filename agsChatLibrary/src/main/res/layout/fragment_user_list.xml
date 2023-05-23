@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingDefaultResource">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@color/colorBackgroundToolBar"
+            android:elevation="@dimen/_4sdp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civUserPictureHome"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:clickable="true"
+                android:src="@drawable/ic_placeholder_profile"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/civBackButtonHome"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:clickable="true"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_back_white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aivCreateGroup"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginHorizontal="@dimen/_25sdp"
+                android:src="@drawable/ic_baseline_groups_24"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/aivAddUser"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aivAddUser"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/ic_baseline_person_add_alt_1_24"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clToolBar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/searchGroupListEdt"
+                    style="@style/editTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:elevation="@dimen/_4sdp"
+                    android:gravity="center_vertical"
+                    android:hint="@string/str_search_chat"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textSize="@dimen/_14ssp" />
+
+                <ImageView
+                    android:id="@+id/searchbtnUserListScreen"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:elevation="@dimen/_4sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_baseline_search_24"
+                    app:tint="@color/black" />
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/colorTextLabel" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvChatList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/item_list_chat" />
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmerLayoutUserList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:animationCache="true"
+                    android:visibility="gone"
+                    app:shimmer_repeat_mode="restart"
+                    app:shimmer_shape="radial">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+
+                        <include layout="@layout/shimmer_layout" />
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

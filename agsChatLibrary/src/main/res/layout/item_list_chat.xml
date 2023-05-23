@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="@dimen/_8sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:elevation="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/groupListLayout"
+            android:padding="@dimen/_4sdp"
+            android:paddingHorizontal="@dimen/_10sdp">
+
+            <CheckBox
+                android:id="@+id/checkBoxSelectUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/purple_500"
+                android:checked="false"
+                android:visibility="gone"
+                android:forceHasOverlappingRendering="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civUserPicture"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:src="@drawable/ic_placeholder_profile"
+                app:layout_constraintStart_toEndOf="@+id/checkBoxSelectUser"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/civUserPicture"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/civUserPicture"
+                app:layout_constraintTop_toTopOf="@+id/civUserPicture">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/tvChatLabel"
+                        style="@style/textViewTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Viral Parmar"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:id="@+id/tvChatDate"
+                        style="@style/textViewNormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:text="5/28/22"
+                        android:textSize="@dimen/_10ssp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/civUserPicture"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvChatHint"
+                        style="@style/textViewSubTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:text="hello"
+                        android:textColor="@color/colorIconBGGrey"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <TextView
+                        android:id="@+id/tvChatCount"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ic_bg_chat_count"
+                        android:gravity="center"
+                        android:text="99+"
+                        android:visibility="gone"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9ssp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+          <!--  <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/colorItemDevider"
+                app:layout_constraintStart_toEndOf="@+id/civUserPicture"
+                app:layout_constraintTop_toBottomOf="@+id/civUserPicture"/>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

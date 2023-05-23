@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.VideoPlayFragment">
+
+    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+        android:id="@+id/idExoPlayerView"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/closevideoshowdialogue"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_cancel"
+        android:layout_marginRight="@dimen/_10sdp"
+        app:tint="@color/colorDarkGrey" />
+
+</RelativeLayout>

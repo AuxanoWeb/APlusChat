@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgBgBlur"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-30dp"
+        android:scaleType="matrix"
+        android:visibility="visible" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorDialogBackground"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_15sdp"
+        android:background="@drawable/bg_custom_dialog"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/textOnBackgroundBold18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:text="Change Url" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/_10sdp"
+            android:id="@+id/edtEnterUrl"
+            android:hint="Enter Url"
+            android:inputType="textUri"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+
+        <TextView
+            android:id="@+id/tvSubmitBtnText"
+            style="@style/allButtonStyle"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:text="@string/str_submit" />
+
+    </LinearLayout>
+</RelativeLayout>

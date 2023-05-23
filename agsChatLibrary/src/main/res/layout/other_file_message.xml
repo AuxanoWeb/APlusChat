@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <RelativeLayout
+        android:id="@+id/dateOtherFileMessagelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/centerTimeOtherFileMessagetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/center_message_bubble"
+            android:padding="@dimen/_5sdp"
+            android:text="December 7,2022"
+            android:textColor="@color/colorTextLabel"
+            android:textSize="@dimen/_14sdp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/otherFileMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:paddingBottom="@dimen/_5sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateOtherFileMessagelayout">
+
+        <LinearLayout
+            android:id="@+id/OtherDocumentMainLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/other_message_bubble"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pervUserNameOtherFile"
+                style="@style/textBlueColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:fontFamily="@font/opensans_semibold"
+                android:includeFontPadding="false"
+                android:maxWidth="220dp"
+                android:text="Parth bhatt"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtOtherFileMessage"
+                style="@style/textViewNormalBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/document_img_custom_blue"
+                android:drawablePadding="@dimen/_5sdp"
+                android:elevation="5dp"
+                android:maxWidth="220dp"
+                android:padding="8dp"
+                android:text=" Hi, my message"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtOtherFileMessageTime"
+                style="@style/textViewNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="10dp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="12:00 PM"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
