@@ -11,7 +11,7 @@ allprojects {
 In App Level gradle
 
 dependencies {
-	        implementation 'com.github.AuxanoWeb:APlusChat:v1.0.0'
+	        implementation 'com.github.AuxanoWeb:APlusChat:latestVersion'
 	}
 	
 Use bellow Function for access Activity
