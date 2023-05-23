@@ -19,6 +19,7 @@ import com.example.auxanochatsdk.Utils.CommonUtils
 import com.example.auxanochatsdk.Utils.CommonUtils.isFromActivity
 import com.example.auxanochatsdk.Utils.CommonUtils.selectedTheme
 import com.example.auxanochatsdk.databinding.ActivityLiraryBinding
+import com.example.auxanochatsdk.network.SocketHandler
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -43,7 +44,7 @@ class LibraryActivity : AppCompatActivity() {
         selectedTheme = intent.getIntExtra("theme", 1)
         mBindingMainActivity = DataBindingUtil.setContentView(this, R.layout.activity_lirary)
         libraryActivity = this
-        isFromActivity=true
+        isFromActivity = true
         CommonUtils.setStatusBarColorDark(this)
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment?
@@ -51,7 +52,7 @@ class LibraryActivity : AppCompatActivity() {
         goneInternetFlag = false
         mNetworkReceiver = NetworkChangeReceiver()
 
-        Log.e("getSelectedTheme", "library: "+ selectedTheme)
+        Log.e("getSelectedTheme", "library: " + selectedTheme)
         registerNetworkBroadcastForNougat()
 
         val appBarConfiguration = AppBarConfiguration.Builder(navController.graph).build()

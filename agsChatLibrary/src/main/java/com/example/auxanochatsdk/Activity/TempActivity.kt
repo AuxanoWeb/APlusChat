@@ -11,7 +11,7 @@ class TempActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_temp)
 
-       // CommonUtils.lunchActivityChat(this, Theme.RED)
-        CommonUtils.lunchFragmentChat(supportFragmentManager,Theme.RED,R.id.loadChatFrameLayout)
+       // CommonUtils.lunchActivityChat(this, Theme.RED,"U2FsdGVkX19wmVtaa5bOlZVjpazEyB3tEX/0BAmWufQjL2AscUo+sZ72L19onNWL","10")
+        CommonUtils.lunchFragmentChat(supportFragmentManager,Theme.RED,R.id.loadChatFrameLayout,"U2FsdGVkX19wmVtaa5bOlZVjpazEyB3tEX/0BAmWufQjL2AscUo+sZ72L19onNWL","3")
     }
 }

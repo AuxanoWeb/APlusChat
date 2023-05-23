@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.auxanochatsdk.Activity.LibraryActivity
 import com.example.auxanochatsdk.Activity.MainFragment
 import com.example.auxanochatsdk.R
+import com.example.auxanochatsdk.network.SocketHandler
 import com.example.auxanochatsdk.network.Theme
 import com.example.soketdemo.Model.GroupListModelItem
 import com.lassi.presentation.camera.CameraFragment
@@ -34,7 +35,7 @@ object CommonUtils {
     var selectedTheme = 1
     var groupListArrayListTemp: ArrayList<GroupListModelItem> = arrayListOf()
     var multiSelectArrayListTemp: ArrayList<MultiSelectModel> = arrayListOf()
-    var isFromActivity=true
+    var isFromActivity = true
     fun fromMillisToTimeString(millis: Long): String {
         val format = SimpleDateFormat("hh:mm a", Locale.getDefault())
         return format.format(millis * 1000)
@@ -207,23 +208,34 @@ object CommonUtils {
         val fileName: String
     ) : Serializable
 
-    fun lunchActivityChat(context: Context, theme: Int) {
+    fun lunchActivityChat(context: Context, theme: Int, secretKey: String, userId: String) {
         Log.e("getSelectedTheme", "lunch: " + theme)
+        SocketHandler.secretKey=secretKey
+        SocketHandler.myUserId=userId
         val intent = Intent(context, LibraryActivity::class.java)
         intent.putExtra("theme", theme)
         (context as Activity).startActivity(intent)
     }
-    fun lunchFragmentChat(context: FragmentManager, theme: Int, view: Int) {
+
+    fun lunchFragmentChat(context: FragmentManager, theme: Int, view: Int,secretKey: String, userId: String) {
+        SocketHandler.secretKey=secretKey
+        SocketHandler.myUserId=userId
         Log.e("getSelectedTheme", "fragmentslunch: " + theme)
         val transaction = getTransaction(context, true)
         transaction.replace(view, MainFragment.newInstance(theme)).commitAllowingStateLoss()
 
     }
-    private fun getTransaction(fragmentManager: FragmentManager, isAnimated: Boolean): FragmentTransaction {
+
+    private fun getTransaction(
+        fragmentManager: FragmentManager,
+        isAnimated: Boolean
+    ): FragmentTransaction {
         val transaction = fragmentManager.beginTransaction()
         if (isAnimated)
-            transaction.setCustomAnimations(0, 0,
-                0, 0)
+            transaction.setCustomAnimations(
+                0, 0,
+                0, 0
+            )
         return transaction
     }
 
@@ -270,6 +282,7 @@ object CommonUtils {
             )
         }
     }
+
     fun setButtonBackgroundDrawable(context: Context, theme: Int, view: View) {
         if (theme == Theme.RED) {
             view.setBackgroundDrawable(
@@ -301,6 +314,7 @@ object CommonUtils {
             view.setTextAppearance(context, R.style.textViewTitle)
         }
     }
+
     fun setTextViewChatStyle(context: Context, theme: Int, view: TextView) {
         if (theme == Theme.RED) {
             view.setTextAppearance(context, R.style.textWhiteColor)

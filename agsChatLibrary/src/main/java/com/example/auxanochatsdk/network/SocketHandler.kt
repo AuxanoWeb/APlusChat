@@ -29,7 +29,7 @@ object SocketHandler {
     lateinit var activity: Activity
     val urlString = "http://3.139.188.226:5000/user/public/"
 
-     var myUserId: String = "1" // (for parth)
+    var myUserId: String = "1" // (for parth)
     //  var myUserId: String = "7" // (for pranay)
     //var myUserId: String = "2" // (for milan bhai)
     //var myUserId: String = "10" // (for pranay3 bhai)
@@ -174,6 +174,12 @@ object SocketHandler {
         /* }else{
              Log.e("getSocketCall", "not call: ")
          }*/
+    }
+
+    @Synchronized
+    fun setUserDetail(secretKey: String, userId: String) {
+        this.secretKey = secretKey
+        this.myUserId = userId
     }
 
     @Synchronized
