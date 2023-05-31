@@ -29,7 +29,7 @@ object SocketHandler {
     lateinit var activity: Activity
     val urlString = "http://3.139.188.226:5000/user/public/"
 
-    var myUserId: String = "1" // (for parth)
+    var myUserId: String = "102" // (for parth)
     //  var myUserId: String = "7" // (for pranay)
     //var myUserId: String = "2" // (for milan bhai)
     //var myUserId: String = "10" // (for pranay3 bhai)
@@ -38,7 +38,7 @@ object SocketHandler {
 
 
     @Synchronized
-    fun setSocket(activity: Activity) {
+    fun setSocket(activity: Activity/*, userId: String*/) {
         try {
             /* if(url.isNotEmpty()){
                  baseURL=url
@@ -50,6 +50,7 @@ object SocketHandler {
                 .readTimeout(10000, TimeUnit.MILLISECONDS)
                 .writeTimeout(10000, TimeUnit.MILLISECONDS)
             options.callFactory = clientBuilder.build()
+         //   this.myUserId = userId
             /*   this.myUserId = LibraryActivity.chatUserId
                this.secretKey = LibraryActivity.chatSecretKey
                Log.e("getBaseUrl", "Socket myUserId: " + LibraryActivity.chatUserId)

@@ -166,7 +166,7 @@ class ChatListFragment() : Fragment(), MessageAdapter.QuoteClickListener {
             initi(mContext, container)
         }
 
-        CommonUtils.setBackgroundColor(mContext, selectedTheme,chatListBinding.clToolBar)
+        CommonUtils.setBackgroundColor(mContext, selectedTheme, chatListBinding.clToolBar)
 
         val chatRepository = GroupRepository(activitymain)
         viewModelChatList = ViewModelProvider(
@@ -495,9 +495,12 @@ class ChatListFragment() : Fragment(), MessageAdapter.QuoteClickListener {
     @RequiresApi(Build.VERSION_CODES.Q)
     private val receiveData =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            if (it.resultCode == Activity.RESULT_OK) {
+            if (it.resultCode == Activity.RESULT_OK && it.data != null) {
                 val selectedMedia =
                     it.data?.getSerializableExtra(KeyUtils.SELECTED_MEDIA) as ArrayList<MiMedia>
+                if(selectedMedia.isNullOrEmpty()){
+                    return@registerForActivityResult
+                }
                 val file = File(selectedMedia.get(0).path!!)
                 val file_size_kb = (file.length() / 1024)
                 val file_size_mb = (file_size_kb / 1024)
@@ -547,7 +550,7 @@ class ChatListFragment() : Fragment(), MessageAdapter.QuoteClickListener {
                         try {
                             contentType =
                                 getMimeType(selectedMedia.get(0).path!!)!!
-                            Log.e("getContentType", ": "+contentType )
+                            Log.e("getContentType", ": " + contentType)
                             // fileName = File(Uri.parse(selectedMedia.get(0).path!!).path).name
                             fileName = selectedMedia.get(0).name!!
                         } catch (e: Exception) {
@@ -886,10 +889,13 @@ class ChatListFragment() : Fragment(), MessageAdapter.QuoteClickListener {
                 val messageSwipeController =
                     MessageSwipeController(mContext, object : SwipeControllerActions {
                         override fun showReplyUI(position: Int) {
-                            isSwipeMessage = true
-                            quotedMessagePos = position
-                            replyMessageId = previousChatArrayList[position].msgId
-                            showQuotedMessage(previousChatArrayList[position])
+                            if (!previousChatArrayList[position].showLoader) {
+                                isSwipeMessage = true
+                                quotedMessagePos = position
+                                replyMessageId = previousChatArrayList[position].msgId
+                                showQuotedMessage(previousChatArrayList[position])
+                            }
+
                         }
                     })
 
@@ -953,7 +959,9 @@ class ChatListFragment() : Fragment(), MessageAdapter.QuoteClickListener {
                 chatListBinding.rvUserChatList,
                 object : RecyclerItemClickListener.OnItemClickListener {
                     override fun onItemClick(view: View?, position: Int) {
-                        if (isMultiSelect) {
+                        if (isMultiSelect &&
+                            !previousChatArrayList[position].showLoader
+                        ) {
                             multi_select(position)
                         }
                         Log.e("checkClickListener", "onItemClick: " + position)
@@ -962,7 +970,8 @@ class ChatListFragment() : Fragment(), MessageAdapter.QuoteClickListener {
                     override fun onItemLongClick(view: View?, position: Int) {
                         if (!isMultiSelect &&
                             !previousChatArrayList[position].type.equals("text") &&
-                            !isSwipeMessage
+                            !isSwipeMessage &&
+                            !previousChatArrayList[position].showLoader
                         ) {
                             isMultiSelect = true
                             multiSelectMsgArrayList = ArrayList()
@@ -1794,7 +1803,7 @@ class ChatListFragment() : Fragment(), MessageAdapter.QuoteClickListener {
                 navControllRefresh?.navigate(
                     R.id.action_chatListFragment_to_forwardFragment,
                 )
-            }else{
+            } else {
                 LibraryActivity.navController?.navigate(
                     R.id.action_chatListFragment_to_forwardFragment,
                 )

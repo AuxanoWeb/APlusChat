@@ -11,21 +11,21 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
+        android:label="@string/app_name"
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        >
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".Activity.TempActivity"
-            android:exported="true" >
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".Activity.LibraryActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="Instantiatable">
-
 
         </activity>
 

@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.content.Context
 import android.graphics.*
 import android.os.Bundle
+import android.os.Handler
 import android.renderscript.Allocation
 import android.renderscript.Element
 import android.renderscript.RenderScript
@@ -88,7 +89,7 @@ class UserListFragment : Fragment(), View.OnClickListener {
         Log.e("userListFragmentcall", "Call: ")
         Log.d(TAG, "onCreateView: Called")
 
-        /*if(!isFirstTimeDialogueOpen){
+       /* if(!isFirstTimeDialogueOpen){
             Handler().postDelayed(Runnable {
                 openDialogue()
             },200)
@@ -143,7 +144,7 @@ class UserListFragment : Fragment(), View.OnClickListener {
 
         // Log.e("getBaseUrl", "secretKey: "+ LibraryActivity.chatSecretKey)
 
-        SocketHandler.setSocket(activity)
+        SocketHandler.setSocket(activity/*,sendBaseUrl*/)
         val groupRepository = GroupRepository(activity)
         groupListViewModel =
             ViewModelProvider(this, GroupListViewModelFactory(groupRepository)).get(
@@ -186,8 +187,8 @@ class UserListFragment : Fragment(), View.OnClickListener {
                             userRoleModel.createOneToOneChat == 0 &&
                             userRoleModel.updateProfile == 0
                         ) {
-                            userListFragmentUserListBinding.civBackButtonHome.visibility =
-                                View.VISIBLE
+                          /*  userListFragmentUserListBinding.civBackButtonHome.visibility =
+                                View.VISIBLE*/
                         }
                     }
                 }
@@ -256,7 +257,7 @@ class UserListFragment : Fragment(), View.OnClickListener {
                         userRoleModel.createOneToOneChat == 0 &&
                         userRoleModel.updateProfile == 0
                     ) {
-                        userListFragmentUserListBinding.civBackButtonHome.visibility = View.VISIBLE
+                     //   userListFragmentUserListBinding.civBackButtonHome.visibility = View.VISIBLE
                     }
                 }
             }
@@ -317,14 +318,14 @@ class UserListFragment : Fragment(), View.OnClickListener {
         val edtEnterUrl: EditText = dialogView.findViewById(R.id.edtEnterUrl)
         tvSubmitBtnText.setOnClickListener {
             if (edtEnterUrl.text.toString().isNotEmpty()) {
-                if (URLUtil.isValidUrl(edtEnterUrl.text.toString())) {
+              //  if (URLUtil.isValidUrl(edtEnterUrl.text.toString())) {
                     alertDialog.dismiss()
                     isFirstTimeDialogueOpen = true
                     sendBaseUrl = edtEnterUrl.text.toString()
                     callSocketConnection(/*sendBaseUrl*/)
-                } else {
+               /* } else {
                     Toast.makeText(mContext, "Please Enter Valid url...", Toast.LENGTH_SHORT).show()
-                }
+                }*/
 
             } else {
                 Toast.makeText(mContext, "Please Enter Url...", Toast.LENGTH_SHORT).show()
@@ -463,7 +464,7 @@ class UserListFragment : Fragment(), View.OnClickListener {
 
                 val activity = mContext as Activity
                 isFirstTimeCallUserList = true
-                SocketHandler.setSocket(activity)
+                SocketHandler.setSocket(activity/*,sendBaseUrl*/)
               //  SocketHandler.onlineUser()
                 SocketHandler.mSocket.on(SocketEvent.GROUP_LIST.event) { args ->
                     Log.e("receiveGroupList", ": " + args)

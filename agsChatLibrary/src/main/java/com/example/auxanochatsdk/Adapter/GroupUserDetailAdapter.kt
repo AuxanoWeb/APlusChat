@@ -176,6 +176,8 @@ class GroupUserDetailAdapter(
                     UserDetailFragment.arrUserIdsRemove = ArrayList()
                     userDetailBinding.tvCountParticipant.text =
                         UserDetailFragment.userModel.size.toString() + " participants"
+                    userDetailBinding.tvMailIdUserDetail.text =
+                        "Group . " + UserDetailFragment.userModel.size.toString() + " participants"
                     notifyDataSetChanged()
 
                 }

@@ -38,14 +38,14 @@
             android:layout_marginTop="@dimen/_15sdp"
             android:layout_marginLeft="@dimen/_15sdp"
             android:layout_marginRight="@dimen/_15sdp"
-            android:text="Change Url" />
+            android:text="Change User" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_margin="@dimen/_10sdp"
             android:id="@+id/edtEnterUrl"
-            android:hint="Enter Url"
-            android:inputType="textUri"
+            android:hint="Enter UserId"
+            android:inputType="number"
             android:layout_height="wrap_content">
 
         </EditText>

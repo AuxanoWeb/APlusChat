@@ -374,8 +374,6 @@ class MessageAdapter(val context: Context, val isGroup: Boolean) :
     }
 
     inner class FooterViewHolder(view: View) : MessageViewHolder(view) {
-
-        private var tvLoading: TextView = view.findViewById(R.id.tvLoading)
         private var mLinearLoading: LinearLayout = view.findViewById(R.id.llLoading)
 
         override fun bind(message: PreviousListModelItem) {
@@ -491,7 +489,8 @@ class MessageAdapter(val context: Context, val isGroup: Boolean) :
             }
             Log.e("getMultiSelectStatus", ": " + message.isMultiSelect)
             MyMessageImageLayout.setOnClickListener(View.OnClickListener {
-                if (!ChatListFragment.isMultiSelect) {
+                if (!ChatListFragment.isMultiSelect &&
+                    message.filePath != "") {
                     val dialog = Dialog(context)
                     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
                     dialog.setCancelable(false)
