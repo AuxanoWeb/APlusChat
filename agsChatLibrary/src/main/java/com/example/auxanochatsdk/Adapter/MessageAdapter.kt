@@ -224,7 +224,7 @@ class MessageAdapter(val context: Context, val isGroup: Boolean) :
             FOOTER -> {
                 FooterViewHolder(
                     LayoutInflater.from(context)
-                        .inflate(R.layout.pagination_footer_loading, parent, false)
+                        .inflate(R.layout.pagination_footer_loading_chat, parent, false)
                 )
             }
             else -> {
